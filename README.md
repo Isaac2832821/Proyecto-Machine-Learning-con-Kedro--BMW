@@ -10,6 +10,7 @@ Se trabajan tres datasets principales (`bmw_classification`, `bmw_sales`, `bmw_u
 ---
 
 ## 📂 Estructura del Proyecto
+
 machine-learning-con-kedro---franco-bmw/
 │
 ├── conf/
@@ -40,42 +41,3 @@ machine-learning-con-kedro---franco-bmw/
 │ └── pipeline_registry.py # Registro de pipelines
 │
 └── README.md
-
----
-
-## 📊 Datasets utilizados
-
-1. **bmw_classification.csv**  
-   Contiene información detallada de modelos BMW con sus características y clasificación de ventas.  
-   **Columnas principales**:  
-   - `Model`, `Year`, `Region`, `Color`, `Fuel_Type`, `Transmission`, `Engine_Size_L`, `Mileage_KM`, `Price_USD`, `Sales_Volume`, `Sales_Classification`
-
-2. **bmw_sales.csv**  
-   Ventas históricas por modelo y región.  
-
-3. **bmw_used.csv**  
-   Información de autos usados (kilometraje, precio, tipo de combustible, etc.).  
-
----
-
-## ⚙️ Pipelines
-
-### 🔹 Data Engineering
-- Limpieza de `bmw_classification`, `bmw_sales`, `bmw_used`.  
-- Genera datasets intermedios (`*_clean.csv`) en `data/02_intermediate/`.
-
-### 🔹 Data Science
-1. **split_data** → Divide datos en train/test aplicando *One-Hot Encoding*.  
-2. **train_model** → Entrena un modelo de clasificación (**LogisticRegression**).  
-3. **evaluate_model** → Calcula la métrica de **accuracy** y guarda resultados.  
-
----
-
-## 🚀 Ejecución
-
-### 1. Crear entorno virtual
-```bash
-python -m venv venv
-.\venv\Scripts\activate
-pip install -r src/requirements.txt
-
